@@ -161,7 +161,7 @@ func (s *DependancySvc) writeDataToSQLFile(dependancies []dto.Dependancy) error 
 	}
 
 	for i, dependancy := range dependancies {
-		row := fmt.Sprintf("(\"%s\", \"%s\", \"%s\", \"%s\")", dependancy.ProgrammingLanguage, dependancy.Repository, dependancy.DependancyName, dependancy.DependancyVersion)
+		row := fmt.Sprintf("('%s', '%s', '%s', '%s')", dependancy.ProgrammingLanguage, dependancy.Repository, dependancy.DependancyName, dependancy.DependancyVersion)
 		if i+1 < len(dependancies) {
 			row += ","
 		} else {
